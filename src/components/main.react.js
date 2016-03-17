@@ -1,16 +1,29 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-export default class Main extends Component {
+import { fetchVideos } from '../actions/video.action';
+
+class Main extends Component {
 
   constructor(props) {
     super(props);
   }
 
+  _handleClick = () => {
+    this.props.fetchVideos('pokemon');
+  };  
+
   render() {
     return (
-      <div>
-        main component
-      </div>
+      <button className="btn btn-danger" onClick={this._handleClick}>Click</button>
     );  
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    videos: state.videos
+  }
+}
+
+export default connect(mapStateToProps, {fetchVideos})(Main);

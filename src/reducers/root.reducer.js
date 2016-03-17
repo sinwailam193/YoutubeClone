@@ -1,14 +1,9 @@
 import { combineReducers } from 'redux';
 
-const videos = () => {
-  return {
-    type: 'FETCH_VIDEOS',
-    payload: 'hi'
-  }
-}
+import VideosReducer from './videos.reducer';
 
 const RootReducer = combineReducers({
-  videos: videos
+  videos: VideosReducer
 });
 
 export default RootReducer;
