@@ -1,10 +1,10 @@
-import YTSearch from 'youtube-api-search';
 import axios from 'axios';
 
 import API_KEY from '../../config.json';
 const {KEY} = API_KEY;
 
 export const FETCH_VIDEOS = 'FETCH_VIDEOS';
+export const SELECT_VIDEO = 'SELECT_VIDEO';
 
 export function fetchVideos(term) {
   var params = {
@@ -18,5 +18,12 @@ export function fetchVideos(term) {
   return {
     type: FETCH_VIDEOS,
     payload: request
-  }
+  };
+}
+
+export function selectVideo(video) {
+  return {
+    type: SELECT_VIDEO,
+    payload: video
+  };
 }
