@@ -1,10 +1,14 @@
 import { combineReducers } from 'redux';
 
-function test(){
-  return {book: 1};
+const videos = () => {
+  return {
+    type: 'FETCH_VIDEOS',
+    payload: 'hi'
+  }
 }
-const rootReducer = combineReducers({
-  list: test
+
+const RootReducer = combineReducers({
+  videos: videos
 });
 
-export default rootReducer;
+export default RootReducer;
