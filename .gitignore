@@ -1,6 +1,5 @@
 /node_modules
 /public/bower_components
-bundle.js
 .DS_Store
 npm-debug.log
 config.json
