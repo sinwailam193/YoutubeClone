@@ -14,7 +14,7 @@ class Main extends Component {
   }
 
   componentWillMount() {
-    this.props.fetchVideos('Pokemon Main Theme')
+    this.props.fetchVideos('Pokemon')
       .then(() => {
         this.props.selectVideo(this.props.videos[0]);
       });
@@ -26,7 +26,7 @@ class Main extends Component {
 
   _videoSelect = (selected) => {
     this.props.selectVideo(selected);
-  }  
+  };
 
   render() {
 
@@ -36,7 +36,7 @@ class Main extends Component {
         <VideoDetail video={this.props.video} />
         <VideoList  videoSelect={this._videoSelect} videos={this.props.videos} />
       </div>
-    );  
+    );
   }
 }
 

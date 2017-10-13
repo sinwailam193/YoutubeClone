@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import API_KEY from '../../config.json';
+import API_KEY from '../../config.js';
 const KEY = process.env.KEY || API_KEY.KEY;
 
 export const FETCH_VIDEOS = 'FETCH_VIDEOS';

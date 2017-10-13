@@ -11,3 +11,7 @@ import RootReducer from './reducers/root.reducer';
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
 
 render(<Provider store={createStoreWithMiddleware(RootReducer)}><Router history={browserHistory} routes={Routes} /></Provider>, document.getElementById('container'));
+
+if ((location.protocol === "https:" || location.hostname === "localhost" || location.hostname === "127.0.0.1") && "serviceWorker" in navigator) {
+    navigator.serviceWorker.register("./service-worker.js");
+}
