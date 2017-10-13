@@ -17,7 +17,7 @@ class Main extends Component {
     this.props.fetchVideos('Pokemon')
       .then(() => {
         this.props.selectVideo(this.props.videos[0]);
-      });
+    });
   }
 
   _videoSearch = (term) => {
@@ -29,7 +29,6 @@ class Main extends Component {
   };
 
   render() {
-
     return (
       <div>
         <SearchBar videoSearch={this._videoSearch} />

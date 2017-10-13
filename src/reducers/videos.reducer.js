@@ -5,7 +5,7 @@ const INITIAL_STATE = {videos: [], video: null};
 export default function(state = INITIAL_STATE, action) {
   switch(action.type){
     case FETCH_VIDEOS:
-        if (action.payload.data) {
+        if (!action.payload.data.error && action.payload.data) {
             return {...state, videos: action.payload.data.items};
         }
     case SELECT_VIDEO:
